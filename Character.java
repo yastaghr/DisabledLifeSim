@@ -32,14 +32,30 @@ class Character{
 
   //initiator for disabilities TODO
   private static void setupDisabilities(){
-    disabilities = new Disability[0];
+    disabilities = new Disability[1];
+    disabilities[0] = new Disability();
     return;
   }
 
   //initiator for jobs TODO
   private static void setupJobs(){
-    jobs = new Job[0];
+    jobs = new Job[1];
+    jobs[0] = new Job();
     return;
   }
 
+  //figures out the value needed for speed TODO
+  private static int getSpeedValue(){
+    return 0;
+  }
+
+  //figures out the value needed for dext TODO
+  private static int getDextValue(){
+    return 0;
+  }
+
+  //figures out the value needed for spoons TODO
+  private static int getSpoonsValue(){
+    return 0;
+  }
 }
