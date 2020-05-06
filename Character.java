@@ -4,7 +4,7 @@
 */
 
 class Character{
-  private int money, age, gender;
+  private int money, age, gender, speed, dext, spoons, hunger, thirst;
   private Disability[] disabilities;
   private Job[] jobs;
   private Home house;
@@ -17,6 +17,11 @@ class Character{
     setupDisabilities();
     setupJobs();
     house = new Home();
+    speed = getSpeedValue();
+    dext = getDextValue();
+    spoons = getSpoonsValue();
+    hunger = 100;
+    thirst = 100;
   }
 
   //initiator for gender TODO
