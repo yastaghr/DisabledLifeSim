@@ -74,12 +74,42 @@ class Character{
 
   //initiator for disabilities TODO
   private static void setupDisabilities(){
+    //setup and fill array of disabilities
     disabilities = new Disability[TOTAL_DISABILITIES];
     for (int i = 0, i<TOTAL_DISABILITIES, i++){
       System.out.println("Add another disability? y/n");
-      if (adding.equals("y")){
-        disabilities[i] = new Disability();
-      } else {
+      if (adding.equals("y")){ //wants to add disability
+
+        System.out.println("Pick your disability: /n
+        Autism / Wheelchair / Cerebral Palsy / Random / Custom ");
+        String pickOfDisability = System.in();
+
+        if (pickOfDisability.equals("Random")){
+          disabilities[i] = new Disability();
+        } else if (pickOfDisability.equals("Custom")){
+          String handicap = "0";
+
+          System.out.println("What is your speed handicap? /n
+          1-10");
+          handicap = System.in();
+          int customSpeed = Integer.parseInt(handicap);
+
+          System.out.println("What is your dext handicap? /n
+          1-10");
+          handicap = System.in();
+          int customDext = Integer.parseInt(handicap);
+
+          System.out.println("What is your spoons handicap? /n
+          1-10");
+          handicap = System.in();
+          int customSpoons = Integer.parseInt(handicap);
+
+          disabilities[i] = new Disability(customSpeed, customDext, customSpoons);
+        } else{
+          disabilities[i] = new Disability(pickOfDisability);
+        }
+
+      } else { //doesn't want to add disability
         disabilities[i] = new Disability("None");
       }
     }
