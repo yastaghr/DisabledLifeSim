@@ -49,7 +49,7 @@ class Disability{
     name = "Custom";
   }
 
-  //creates disability from list of premades TODO
+  //creates disability from list of premades
   public Disability(String disabilityName){
     if (disabilityName.equals(AUTISM_NAME)){
       speedMod = AUTISM_SPEEDMOD;
