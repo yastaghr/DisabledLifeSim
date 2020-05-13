@@ -9,11 +9,15 @@ class Character{
   private Job[] jobs;
   private Home house;
 
+  //gender constants
   private static final int AGENDER = 0;
   private static final int FEMALE = 1;
   private static final int MALE = 2;
   private static final int NONBINARY = 3;
   private static final int GENDERFLUID = 4;
+
+  //disability constants
+  private static final int TOTAL_DISABILITIES = 5;
 
   //creates new character
   public Character(){
@@ -46,7 +50,7 @@ class Character{
   //walks user through picking gender for character
   private static int pickGender(){
     System.out.println("What gender do you want for your character? /n
-    AGENDER/FEMALE/MALE/NONBINARY/GENDERFLUID");
+    AGENDER / FEMALE / MALE / NONBINARY / GENDERFLUID");
     String pickedGender = System.in();
 
     if (pickedGender.equals("AGENDER")){
@@ -70,8 +74,15 @@ class Character{
 
   //initiator for disabilities TODO
   private static void setupDisabilities(){
-    disabilities = new Disability[1];
-    disabilities[0] = new Disability();
+    disabilities = new Disability[TOTAL_DISABILITIES];
+    for (int i = 0, i<TOTAL_DISABILITIES, i++){
+      System.out.println("Add another disability? y/n");
+      if (adding.equals("y")){
+        disabilities[i] = new Disability();
+      } else {
+        disabilities[i] = new Disability("None");
+      }
+    }
     return;
   }
 
