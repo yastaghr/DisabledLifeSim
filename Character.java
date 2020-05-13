@@ -1,5 +1,5 @@
 /*Author: Liana Bardallis
-* Date: 6 May 2020
+* Date: 13 May 2020
 * Description: Character object for DisabledLifeSim game
 */
 
@@ -8,6 +8,12 @@ class Character{
   private Disability[] disabilities;
   private Job[] jobs;
   private Home house;
+
+  private static final int AGENDER = 0;
+  private static final int FEMALE = 1;
+  private static final int MALE = 2;
+  private static final int NONBINARY = 3;
+  private static final int GENDERFLUID = 4;
 
   //creates new character
   public Character(){
@@ -24,10 +30,41 @@ class Character{
     thirst = 100;
   }
 
-  //initiator for gender TODO
+  //initiator for gender
   private static void setupGender(){
-    gender = 0;
+    System.out.println("Do you want to pick a gender for your character? y/n");
+    String wantsToPickGender = System.in();
+
+    if (wantsToPickGender.equals("y")){
+      gender = pickGender();
+    } else {
+      gender = randomGender();
+    }
     return;
+  }
+
+  //walks user through picking gender for character
+  private static int pickGender(){
+    System.out.println("What gender do you want for your character? /n
+    AGENDER/FEMALE/MALE/NONBINARY/GENDERFLUID");
+    String pickedGender = System.in();
+
+    if (pickedGender.equals("AGENDER")){
+      return AGENDER;
+    } else if (pickedGender.equals("FEMALE")){
+      return FEMALE;
+    } else if (pickedGender.equals("MALE")){
+      return MALE;
+    } else if (pickedGender.equals("NONBINARY")){
+      return NONBINARY;
+    } else if (pickedGender.equals("GENDERFLUID")){
+        return GENDERFLUID;
+    } else return 0;
+  }
+
+  //returns random int cooresponding to randomized gender TODO
+  private static int randomGender(){
+    return 0;
   }
 
   //initiator for disabilities TODO
