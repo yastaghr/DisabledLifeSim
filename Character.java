@@ -62,9 +62,10 @@ class Character{
     } else return 0;
   }
 
-  //returns random int cooresponding to randomized gender TODO
+  //returns random int cooresponding to randomized gender
   private static int randomGender(){
-    return 0;
+    Random rand = new Random()
+    return rand.nextInt(GENDERFLUID);
   }
 
   //initiator for disabilities TODO
