@@ -148,7 +148,7 @@ class Character{
     return;
   }
 
-  //removes a job TODO
+  //removes a job
   private static void removeJob(Job deadJob){
     //search for job to be removed in array
     int copyIndex = 0;
