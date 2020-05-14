@@ -15,16 +15,51 @@ class Job{
   private static final int NO_JOB_SPOONSTOLL = 0;
   private static final int NO_JOB_LOCATION = 0;
 
+  //constants for construction worker
+  private static final String CW_NAME = "Construction Worker";
+  private static final int CW_SPEEDTOLL = 0;
+  private static final int CW_DEXTTOLL = -10;
+  private static final int CW_SPOONSTOLL = 0;
+
+  //constants for tour guide
+  private static final String TG_NAME = "Tour Guide";
+  private static final int TG_SPEEDTOLL = -10;
+  private static final int TG_DEXTTOLL = 0;
+  private static final int TG_SPOONSTOLL = 0;
+
+  //constants for service industry
+  private static final String SI_NAME = "Service Industry";
+  private static final int SI_SPEEDTOLL = 0;
+  private static final int SI_DEXTTOLL = 0;
+  private static final int SI_SPOONSTOLL = -10;
+
   //creates new disability from premades
   public Job(String jobName){
     name = jobName;
+    Random rand = new Random();
     //switch for different premade jobs
-    if (name.equals(NO_JOB_NAME)){
+    if (name.equals(CW_NAME))){
+      speedToll = CW_SPEEDTOLL;
+      dextToll = CW_DEXTTOLL;
+      spoonsToll = CW_SPOONSTOLL;
+      location = rand.nextInt(10);
+    } else if (name.equals(TG_NAME))){
+      speedToll = TG_SPEEDTOLL;
+      dextToll = TG_DEXTTOLL;
+      spoonsToll = TG_SPOONSTOLL;
+      location = rand.nextInt(10);
+    } if (name.equals(SI_NAME))){
+      speedToll = SI_SPEEDTOLL;
+      dextToll = SI_DEXTTOLL;
+      spoonsToll = SI_SPOONSTOLL;
+      location = rand.nextInt(10);
+    } else {
       speedToll = NO_JOB_SPEEDTOLL;
       dextToll = NO_JOB_DEXTTOLL;
       spoonsToll = NO_JOB_SPOONSTOLL;
       location = NO_JOB_LOCATION;
     }
+    return;
   }
 
   //creates new disability at random
