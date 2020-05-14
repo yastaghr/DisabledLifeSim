@@ -19,6 +19,9 @@ class Character{
   //disability constants
   private static final int TOTAL_DISABILITIES = 5;
 
+  //job constants
+  private static final int TOTAL_JOBS = 5;
+
   //creates new character
   public Character(){
     money = 0;
@@ -72,11 +75,11 @@ class Character{
     return rand.nextInt(GENDERFLUID);
   }
 
-  //initiator for disabilities TODO
+  //initiator for disabilities
   private static void setupDisabilities(){
     //setup and fill array of disabilities
     disabilities = new Disability[TOTAL_DISABILITIES];
-    for (int i = 0, i<TOTAL_DISABILITIES, i++){
+    for (int i = 0; i < TOTAL_DISABILITIES; i++){
       System.out.println("Add another disability? y/n");
       if (adding.equals("y")){ //wants to add disability
 
@@ -116,10 +119,46 @@ class Character{
     return;
   }
 
-  //initiator for jobs TODO
+  //initiator for jobs
   private static void setupJobs(){
-    jobs = new Job[1];
-    jobs[0] = new Job();
+    jobs = new Job[TOTAL_JOBS];
+    for (i = 0; i < jobs.length; i++){
+      jobs[i] = new Job("None");
+    }
+    return;
+  }
+
+  //adds a new jobs
+  private static void addJob(Job newJob){
+    //search for empty space in array
+    for (i = 0; i < jobs.length; i++){
+      if (jobs[i].equals(new Job("None"))){
+        jobs[i] = newJob;
+        return;
+      }
+    }
+
+    //no empty space found
+    Job[] newJobsArray = new Job[jobs.length + TOTAL_JOBS];
+    for (i = 0; i < jobs.length; i++){
+      newJobsArray[i] = jobs[i];
+    }
+    newJobsArray[jobs.length + 1] = newJob;
+    jobs = newJobsArray;
+    return;
+  }
+
+  //removes a job TODO
+  private static void removeJob(Job deadJob){
+    //search for job to be removed in array
+    int copyIndex = 0;
+    for (i = 0; i < jobs.length-1; i++){
+      if (jobs[i].equals(deadJob)){
+        copyIndex++;
+      }
+      jobs[i] = jobs[copyIndex];
+    }
+    jobs[jobs.length] = new Job("None");
     return;
   }
 
