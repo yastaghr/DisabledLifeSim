@@ -129,7 +129,7 @@ class Character{
   }
 
   //adds a new jobs
-  private static void addJob(Job newJob){
+  public static void addJob(Job newJob){
     //search for empty space in array
     for (i = 0; i < jobs.length; i++){
       if (jobs[i].equals(new Job("None"))){
@@ -149,7 +149,7 @@ class Character{
   }
 
   //removes a job
-  private static void removeJob(Job deadJob){
+  public static void removeJob(Job deadJob){
     //search for job to be removed in array
     int copyIndex = 0;
     for (i = 0; i < jobs.length-1; i++){
