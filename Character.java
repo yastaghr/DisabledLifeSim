@@ -26,6 +26,8 @@ class Character{
   private static final int MAX_DEXT = 20;
   private static final int MAX_SPEED = 20;
   private static final int MAX_SPOONS = 20;
+  private static final int MAX_HUNGER = 100;
+  private static final int MAX_THIRST = 100;
 
   //creates new character
   public Character(){
@@ -38,8 +40,8 @@ class Character{
     speed = setupSpeedValue();
     dext = setupDextValue();
     spoons = setupSpoonsValue();
-    hunger = 100;
-    thirst = 100;
+    hunger = MAX_HUNGER;
+    thirst = MAX_THIRST;
   }
 
   //initiator for gender
@@ -200,6 +202,30 @@ class Character{
       dextVal += disabilities[i].getDextValue();
     }
     dext = dextVal;
+    return;
+  }
+
+  //removes hunger by given amount
+  public static void addHunger(int val){
+    hunger -= val;
+    return;
+  }
+
+  //adds hunger by given amount
+  public static void eatSomething(int val){
+    hunger += val;
+    return;
+  }
+
+  //removes thirst by given amount
+  public static void addThirst(int val){
+    thirst -= val;
+    return;
+  }
+
+  //adds thirst by given amount
+  public static void drinkSomething(int val){
+    thirst += val;
     return;
   }
 }
