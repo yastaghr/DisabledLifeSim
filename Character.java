@@ -22,6 +22,11 @@ class Character{
   //job constants
   private static final int TOTAL_JOBS = 5;
 
+  //statistic constants
+  private static final int MAX_DEXT = 20;
+  private static final int MAX_SPEED = 20;
+  private static final int MAX_SPOONS = 20;
+
   //creates new character
   public Character(){
     money = 0;
@@ -30,9 +35,9 @@ class Character{
     setupDisabilities();
     setupJobs();
     house = new Home();
-    speed = getSpeedValue();
-    dext = getDextValue();
-    spoons = getSpoonsValue();
+    speed = setupSpeedValue();
+    dext = setupDextValue();
+    spoons = setupSpoonsValue();
     hunger = 100;
     thirst = 100;
   }
@@ -139,11 +144,11 @@ class Character{
     }
 
     //no empty space found
-    Job[] newJobsArray = new Job[jobs.length + TOTAL_JOBS];
+    Job[] newJobsArray = new Job[jobs.length++];
     for (i = 0; i < jobs.length; i++){
       newJobsArray[i] = jobs[i];
     }
-    newJobsArray[jobs.length + 1] = newJob;
+    newJobsArray[jobs.length++] = newJob;
     jobs = newJobsArray;
     return;
   }
@@ -162,18 +167,39 @@ class Character{
     return;
   }
 
-  //figures out the value needed for speed TODO
-  private static int getSpeedValue(){
-    return 0;
+  /* figures out the value needed for speed by cycling through disabilities and
+  *  adding up speed mods
+  */
+  private static void setSpeedValue(){
+    int speedVal = MAX_SPEED;
+    for (i = 0; i < disabilities.length; i++){
+      speedVal += disabilities[i].getSpeedValue();
+    }
+    speed = speedVal;
+    return;
   }
 
-  //figures out the value needed for dext TODO
-  private static int getDextValue(){
-    return 0;
+  /* figures out the value needed for spoons by cycling through disabilities and
+  *  adding up spoons mods
+  */
+  private static void setSpoonsValue(){
+    int spoonsVal = MAX_SPOONS;
+    for (i = 0; i < disabilities.length; i++){
+      spoonsVal += disabilities[i].getSpoonsValue();
+    }
+    spoons = spoonsVal;
+    return;
   }
 
-  //figures out the value needed for spoons TODO
-  private static int getSpoonsValue(){
-    return 0;
+  /* figures out the value needed for dext by cycling through disabilities and
+  *  adding up dext mods
+  */
+  private static void setDextValue(){
+    int dextVal = MAX_DEXT;
+    for (i = 0; i < disabilities.length; i++){
+      dextVal += disabilities[i].getDextValue();
+    }
+    dext = dextVal;
+    return;
   }
 }
