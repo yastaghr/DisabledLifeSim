@@ -2,7 +2,7 @@
 * Date: 6 May 2020
 * Description: the board object for the DisabledLifeSim game
 */
-class Board{
+public class Board{
   //variables for board setup
   private Character chara;
   private int year;

@@ -3,7 +3,7 @@
 * Description: Home object for DisabledLifeSim game
 */
 
-class Home{
+public class Home{
   //values of home
   private int spoonsToll, tax, cost, label;
   private int[] location;
