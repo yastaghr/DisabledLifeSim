@@ -7,15 +7,18 @@ class Board{
   private Character chara;
   private int year;
   private Country country;
+  private int[] size;
 
   //constants for board setup
   private static final int STARTING_YEAR = 2000;
+  private static final int BASE_SIZE = 60
 
   //basic board initiator
   public Board(){
     chara = new Character();
     year = STARTING_YEAR;
     country = new Country();
+    size = new int[BASE_SIZE, BASE_SIZE];
   }
 
   //updates the year +1
