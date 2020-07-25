@@ -3,7 +3,7 @@
 * Description: Character object for DisabledLifeSim game
 */
 
-class Character{
+public class Character{
   private int money, age, gender, speed, dext, spoons, hunger, thirst;
   private Disability[] disabilities;
   private Job[] jobs;
