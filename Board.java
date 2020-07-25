@@ -1,4 +1,5 @@
-/* Author: Liana Bardallis
+/*
+* Author: Liana Bardallis
 * Date: 6 May 2020
 * Description: the board object for the DisabledLifeSim game
 */

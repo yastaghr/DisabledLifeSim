@@ -1,4 +1,5 @@
-/*Author: Liana Bardallis
+/*
+* Author: Liana Bardallis
 * Date: 13 May 2020
 * Description: Character object for DisabledLifeSim game
 */
