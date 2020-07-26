@@ -38,34 +38,36 @@ public class Home{
   private static final int HOUSE_TAX = 60;
   private static final int HOUSE_COST = 6000;
 
-  //creates new no home (homeless)
-  public Home(){
-    spoonsMod = NO_HOME_SPOONSTOLL;
-    name = NO_HOME_NAME;
-    label = NO_HOME_LABEL;
-    tax = NO_HOME_TAX;
-    cost = NO_HOME_COST;
-  }
-
   //creates new home given string with Choice/randomize order
   public Home(String choice){
     //if no choice then randomize home data
-    if (choice.equals("Random")){
-      initializeRandomHome();
+    if (choice.equals("None")){
+      initHome(NO_HOME_LABEL);
     } else if (choice.equals("Apartment")){
-      initHome(1);
+      initHome(APARTMENT_LABEL);
     } else if (choice.equals("Condo")){
-      initHome(2);
+      initHome(CONDO_LABEL);
     } else if (choice.equals("House")){
-      initHome(3);
+      initHome(HOUSE_LABEL);
+    } else {
+      initializeRandomHome();
     }
 
     //randomize home position on board after everything else initializes
     randomizeHomePosition();
   }
 
-  //creates new home given label of home TODO
-  private static void initHome(int createThisLabel){
+  //creates new home given identifier label of home TODO
+  private static void initHome(int identifier){
+    if (identifier == NO_HOME_LABEL){
+      initHomeless();
+    } else if (identifier == APARTMENT_LABEL){
+      initApartment();
+    } else if (identifier == CONDO_LABEL){
+      initCondo();
+    } else if (identifier == HOUSE_LABEL){
+      initHouse();
+    } else initializeRandomHome();
     return;
   }
 
@@ -76,6 +78,26 @@ public class Home{
 
   //initializes random location TODO
   private static void randomizeHomePosition(){
+    return;
+  }
+
+  //initializes homelessness TODO
+  private static void initHomeless(){
+    return;
+  }
+
+  //initializes Apartment TODO
+  private static void initApartment(){
+    return;
+  }
+
+  //initializes condo TODO
+  private static void initCondo(){
+    return;
+  }
+
+  //initializes house TODO
+  private static void initHouse(){
     return;
   }
 }
